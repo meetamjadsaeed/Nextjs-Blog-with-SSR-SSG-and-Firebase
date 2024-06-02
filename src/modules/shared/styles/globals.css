@@ -1,0 +1,294 @@
+@font-face {
+  font-family: 'LoRes9OTWide-Bold';
+  src: url('../../../../public/assets/fonts/LoRes/LoRes9OTWide-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LoRes9OTWide-Regular';
+  src: url('../../../../public/assets/fonts/LoRes/LoRes9OTWide-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LoRes12OT-Regular';
+  src: url('../../../../public/assets/fonts/LoRes/LoRes12OT-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter-Black';
+  src: url('../../../../public/assets/fonts/Inter/Inter-Black.ttf') format('truetype');
+}
+
+
+
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  /* --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace; */
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-glow: conic-gradient(from 180deg at 50% 50%,
+      #16abff33 0deg,
+      #0885ff33 55deg,
+      #54d6ff33 120deg,
+      #0071ff33 160deg,
+      transparent 360deg);
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0));
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(#00000080,
+      #00000040,
+      #00000030,
+      #00000020,
+      #00000010,
+      #00000010,
+      #00000080);
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+
+  ---color-red: #FF6F6F;
+  ---color-green: #94d55a;
+  ---color-blue: #70bed7;
+
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "LoRes9OTWide-Regular";
+  background: radial-gradient(55.09% 55.09% at 49.43% 71.16%, #282828 0%, #000 100%);
+  caret-color: transparent;
+}
+
+body {}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-family: "LoRes9OTWide-Bold";
+}
+
+h3 {
+  font-family: "LoRes12OT-Regular";
+}
+
+@keyframes RingProgress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.ActivityRings {
+  height: 100%;
+  width: 100%;
+
+  .ring {
+    transform-origin: 50%;
+  }
+
+  .completed {
+    animation: RingProgress 1s ease-in-out forwards;
+    stroke-linecap: round;
+  }
+
+  circle {
+    fill: none;
+  }
+}
+
+.ring1 {
+  .background {
+    stroke: transparentize(var(---color-red), 0.8);
+  }
+
+  .completed {
+    stroke: var(---color-red);
+  }
+}
+
+
+.ring2 {
+  .background {
+    stroke: transparentize(var(---color-green), 0.8);
+  }
+
+  .completed {
+    stroke: var(---color-green);
+  }
+}
+
+
+.ring3 {
+  .background {
+    stroke: transparentize(var(---color-blue), 0.8);
+  }
+
+  .completed {
+    stroke: var(---color-blue);
+  }
+}
+
+.circle-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.circle-container .backdrop-filter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  /* Adjust to match the size of your inner circle */
+  height: 20px;
+  /* Adjust to match the size of your inner circle */
+  background: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* Makes it circular */
+  backdrop-filter: blur(5px);
+  /* Example filter */
+  z-index: 10;
+  /* Ensures the filter is above the SVG */
+}
+
+.ActivityRings {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* temporary styles  */
+.btn-wrapper {
+  display: inline-block;
+  /* Adjust wrapper styles as needed */
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 400px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn i {
+  margin-right: 10px;
+}
+
+
+/* global input styles  */
+.customInputWithColor {
+  color: #FFF;
+  /* Apply desired color */
+}
+
+.customInputWithColor {
+  color: #EEB84F;
+  /* Apply desired color */
+}
+
+
+/* temporary styles  */
+/* .primaryInputField input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  border-color: inherit !important;
+  outline: none !important;
+} */
+
+
+/* Hide the scrollbar */
+.oAuthParentCard::-webkit-scrollbar {
+  width: 0;
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+/* Optional: style scrollbar track and thumb */
+.oAuthParentCard::-webkit-scrollbar-track {
+  /* background-color: #f1f1f1; */
+  /* Optional: scrollbar track color */
+}
+
+.oAuthParentCard::-webkit-scrollbar-thumb {
+  /* background-color: #888; */
+  /* Optional: scrollbar thumb color */
+}
+
+
+
+/* .toast.show {
+  opacity: 1;
+} */
+
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator */
+::-webkit-scrollbar-thumb {
+  /* background: #888; */
+}
+
+
+
+/* adding temporary */
+
+.generalWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+
+@media only screen and (min-width: 769px) {
+
+  /* Media query for screens wider than 768px */
+  .generalWrapper {
+    flex-direction: row;
+  }
+}
