@@ -27,7 +27,7 @@ const GlobalHeader = () => {
           maxHeight: "460px",
         }}
       >
-        <button onClick={handleFetchAndStoreData}>test</button>
+        {/* <button onClick={handleFetchAndStoreData}>test</button> */}
 
         <div className="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
           <p className="text-xl md:text-2xl text-gray-500">

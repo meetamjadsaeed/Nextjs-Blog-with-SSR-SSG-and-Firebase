@@ -22,6 +22,7 @@ const Posts = () => {
       const postsCollection = collection(db, "posts");
       const postsSnapshot = await getDocs(postsCollection);
       const postsList = postsSnapshot.docs.map((doc) => doc.data());
+      // setApiData(postsList);
     };
 
     fetchPosts();
