@@ -6,9 +6,10 @@ const ProtectedRoute = ({ children }) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const { authenticated, token, user } = useSelector(
-    (state) => state.persistedReducer.auth
-  );
+  const authenticated = false;
+  const token = "";
+
+  // need to use token and authenticated from redux store, above are just placeholders
 
   useEffect(() => {
     if (!authenticated && !token) {

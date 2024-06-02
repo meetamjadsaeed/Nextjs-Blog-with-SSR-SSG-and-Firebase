@@ -18,14 +18,6 @@ class ReUse {
     }
   };
 
-  static defaultThumbnailImage = ({ content = "No+Image+Available" }) => {
-    try {
-      return PublicMedia.Avatar;
-    } catch (err) {
-      return "";
-    }
-  };
-
   static resetForm = ({ fields = {} }) => {
     /**
      *  // fields is object
@@ -80,7 +72,7 @@ class ReUse {
 
     try {
       if (loading) {
-        return <LoaderForApi />;
+        return;
       }
 
       if (Array.isArray(data) && data.length > 0) {
@@ -122,7 +114,7 @@ class ReUse {
 
     try {
       if (loading) {
-        return <LoaderForApi />;
+        return "loading...";
       }
 
       if (Array.isArray(data) && data.length > 0) {
@@ -158,7 +150,7 @@ class ReUse {
 
     try {
       if (loading) {
-        return <LoaderForApi />;
+        return "loading...";
       }
 
       if (Array.isArray(data) && data.length > 0) {
@@ -187,7 +179,7 @@ class ReUse {
     data: string;
   }) => {
     if (loading) {
-      return <LoaderForContent />;
+      return "loading...";
     }
     if (typeof data === "string" || data instanceof String) {
       return data || "";

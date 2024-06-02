@@ -1,9 +1,8 @@
 import React from "react";
-import GlobalWrapper from "../../shared/components/globalWrapper";
+
 import GlobalFooter from "../../shared/components/globalFooter";
 import GlobalHeader from "../../shared/components/globalHeader";
 import Head from "next/head";
-import ReUse from "../../../utils/reUse";
 
 const BlogLayout = ({ children }: { children: React.ReactNode }) => {
   return (

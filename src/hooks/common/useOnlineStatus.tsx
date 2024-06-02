@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  showSweetAlert,
-  updateSweetAlert,
-} from "../../redux/slices/alert/customSweetAlert.slice";
 
 const useOnlineStatus = () => {
   // const dispatch = useDispatch();
