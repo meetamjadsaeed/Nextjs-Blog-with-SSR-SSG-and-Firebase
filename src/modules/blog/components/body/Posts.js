@@ -8,14 +8,19 @@ import { collection, getDocs } from "firebase/firestore";
 
 import BlogPostCard from "./BlogPostCard";
 
-const Posts = () => {
-  const [apiData, setApiData] = useState([]);
-  const [loading, setLoading] = useState(false);
+const Posts = ({ apiData }) => {
+  console.log(apiData, "apiData");
 
-  useEffect(() => {
-    const allRecipes = AppService.getBlogs();
-    ReUse.getApiData(allRecipes, setApiData, setLoading);
-  }, []);
+  // const [apiData, setApiData] = useState([]);
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const allRecipes = AppService.getBlogs();
+
+  //   console.log(allRecipes, "firstRecipe");
+
+  //   ReUse.getApiData(allRecipes, setApiData, setLoading);
+  // }, []);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -30,7 +35,7 @@ const Posts = () => {
   return (
     <>
       <div className="flex flex-wrap justify-between pt-12 -mx-6">
-        {ReUse.mapItems(loading, apiData, BlogPostCard)}
+        {ReUse.mapItems(false, apiData?.posts, BlogPostCard)}
       </div>
     </>
   );

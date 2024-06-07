@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 
 import Posts from "./Posts";
 
-const BlogBody = ({ defaultModule = "posts" }) => {
+const BlogBody = ({ defaultModule = "posts", apiData }) => {
   const [currentWrapper, setCurrentWrapper] = useState(null);
 
   useEffect(() => {
     const availableModules = {
-      posts: <Posts />,
+      posts: <Posts apiData={apiData} />,
     };
 
     const normalizedDefaultModule = defaultModule?.toLowerCase();

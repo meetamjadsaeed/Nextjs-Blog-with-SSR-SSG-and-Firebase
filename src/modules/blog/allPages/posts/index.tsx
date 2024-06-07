@@ -2,10 +2,10 @@ import React from "react";
 import BlogLayout from "../../layout";
 import BlogBody from "../../components/body";
 
-const PostsPage = () => {
+const PostsPage = ({ apiData }) => {
   return (
     <BlogLayout>
-      <BlogBody defaultModule={"posts"} />
+      <BlogBody defaultModule={"posts"} apiData={apiData} />
     </BlogLayout>
   );
 };
