@@ -10,7 +10,7 @@ export default function Home({ data }) {
 
 // The getServerSideProps function
 export async function getServerSideProps(context) {
-  const res = await fetch("https://dummyjson.com/posts");
+  const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/posts");
   const data = await res.json();
 
   return {
